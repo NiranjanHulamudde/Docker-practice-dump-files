@@ -1,0 +1,23 @@
+version: "3"
+services:
+  web:
+    image: nginx
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    volumes:
+      - docker-practice:/user/bin/app
+
+  db:
+    image: postgres
+    ports:
+      - "5432:5432" 
+
+volumes:
+  docker-practise:
+    
+
+
+
+      
