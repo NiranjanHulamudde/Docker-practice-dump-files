@@ -1,0 +1,27 @@
+version: "3"
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    networks:
+      - my-net
+
+  db:
+    image: postgres
+    volumes:
+      - myapp:/usr/bin/app
+    environment:
+        POSTGRES_PASSWORD: password
+    networks:
+      - my-net
+
+networks:
+    my-net:
+      driver: bridge
+
+
+volumes:
+  myapp:
