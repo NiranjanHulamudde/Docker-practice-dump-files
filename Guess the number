@@ -1,1 +1,15 @@
+# This is a game i came to know from a book.
+# Guess the number
+while True,
+continue
+p = input("Please guess the number from 1-10")
+import random
+import random.randint()
+random_number = random.randint(1, 10) + 1
 
+if p == random_number:
+  print("Bingo!")
+elif p > random_number:
+  print("Number is smaller, guess again")
+elif p < random_number:
+  print("Number is greater, guess again")
